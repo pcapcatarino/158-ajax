@@ -3,8 +3,9 @@
  <script src="jquery.js"></script>
 <body id="">
 
-   <button name="aaaa" value="clica aqui" id="aaaa"></button>
-    <button name="bbbb" value="clica aqui" id="bbbb">json</button>
+   <button name="aaaa"  id="aaaa"> localidades</button>
+    <button name="bbbb"  id="bbbb">localidades json</button>
+     <button name="btpessoa" id="btpessoa">pessoa</button>
    
    <div class="result">
    </div>
@@ -33,6 +34,17 @@
     $.each(data, function( key, val) {
       $( ".resultjson").append( '<h1>' + key + '::' + val + '</h1>' );
     });
+  });
+
+}); 
+
+  $( "#btpessoa "). click(function() { 
+   servidor= "http://www.franciscoribeiro.net/"
+    $.getJSON ( servidor + "pessoa1.json", function( data ) { 
+    
+    $("body").append('<div>nome:' + data['nome'] + '</div>')
+     $("body").append('<div>nac.:' + data['nacionalidade'] + '</div>')
+   
   });
 
 }); 
