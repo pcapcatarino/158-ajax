@@ -1,0 +1,35 @@
+<html>
+	
+ <script src="jquery.js"></script>
+<body id="">
+
+   <button name="aaaa"  id="flicker">flicker</button>
+    
+   
+   <div class="result">
+   </div>
+
+    <div class="resultjson">
+   </div>
+
+</body>
+
+<script> 
+
+
+
+
+  $( "#flicker "). click(function() { 
+   servidor= "http://api.flicker.com/services/feeds/photos_public.gne?id=21088294@N00 &format=json&jsoncallbacck="
+    $.getJSON ( servidor + "flicker", function( data ) { 
+    
+   // $("body").append('<div>1:' + data['1'] + '</div>')
+    // $("body").append('<div>2:' + data['2'] + '</div>')
+   
+  });
+
+}); 
+  
+  </script>
+
+</html>
